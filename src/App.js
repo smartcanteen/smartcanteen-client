@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { createBrowserHistory } from 'history'
+import { Box } from '@material-ui/core'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Home } from 'components/pages/Public'
+import { ProtectedRoute } from 'components/pages/Private'
 
-function App() {
+export const history = createBrowserHistory()
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box className="App">
+      <Router history>
+        <Switch>
+          <Route path="/" component={Home} exact/>
+        </Switch>
+      </Router>
+    </Box>
+  )
 }
 
-export default App;
+export default App
