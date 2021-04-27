@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom'
 const ProtectedRoute = ({component: Component, ...rest }) => {
     // const status = useRecoilValue(authState)
     const status = {
-        isAuthenticated:false,
+        isAuthenticated:true,
     }
     return(
         <Route

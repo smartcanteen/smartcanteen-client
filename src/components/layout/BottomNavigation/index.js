@@ -1,13 +1,21 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
 import { BottomNavigation, BottomNavigationAction, Icon, Fab  } from '@material-ui/core'
 
-// Icon List
+// Icon List For User
 import HomeIcon from '@material-ui/icons/Home';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import StarsIcon from '@material-ui/icons/Stars';
+
+// Icon List For Seller
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import AlarmAddIcon from '@material-ui/icons/AlarmAdd';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import RoomServiceIcon from '@material-ui/icons/RoomService';
 
 // Custom Style
 import useStyles from './style'
@@ -21,26 +29,40 @@ const FloatingMenu = ({icon}) => {
     )
 }
 
-const BottomNav = () => {
+const BottomNav = props => {
     const classes = useStyles();
     let history = useHistory();
-
     const pathname = window.location.pathname;
+    
+    // harusnya isAuthenticated diambil dari state
+    const { isAuthenticated } = props
+    
     const [value, setValue] = useState(pathname);
-
+    
     const handleChange = (event, uri) => {
         history.push(uri);
         setValue(uri);
     };
+    
+    let menus = []
 
-    const menus = [
-        // { label: "Home", value: "/", icon: <ParseIcon iconSource={HomeIcon} width={20} height={20}/> },
-        { label: "Beranda", value: "/", icon: <HomeIcon/> },
-        { label: "Menu", value: "/menus", icon: <FastfoodIcon/> },
-        { label: "", value: "/check-status", icon: <FloatingMenu icon={<ShoppingBasketIcon/>}/>, active:true },
-        { label: "Penjual", value: "/check-status", icon: <RestaurantMenuIcon/> },
-        { label: "Rekomendasi", value: "/recommendation", icon: <StarsIcon/> },
-    ];
+    if(isAuthenticated){
+        menus = [
+            { label: "Dashboard", value: "/dashboard", icon: <DashboardIcon/> },
+            { label: "Profile", value: "/profile", icon: <AccountCircleIcon/> },
+            { label: "", value: "/order-list", icon: <FloatingMenu icon={<AlarmAddIcon/>}/>, active:true },
+            { label: "Warung Saya", value: "/booth", icon: <RoomServiceIcon/> },
+            { label: "Tambah Menu", value: "/add-menu", icon: <AddBoxIcon/> },
+        ];
+    }else{
+        menus = [
+            { label: "Beranda", value: "/", icon: <HomeIcon/> },
+            { label: "Menu", value: "/menus", icon: <FastfoodIcon/> },
+            { label: "", value: "/dashboard", icon: <FloatingMenu icon={<ShoppingBasketIcon/>}/>, active:true },
+            { label: "Penjual", value: "/check-status", icon: <RestaurantMenuIcon/> },
+            { label: "Rekomendasi", value: "/recommendation", icon: <StarsIcon/> },
+        ];
+    }
 
     return (
         <BottomNavigation
@@ -70,6 +92,10 @@ const BottomNav = () => {
             
         </BottomNavigation>
     )
+}
+
+BottomNav.propTypes = {
+    isAuthenticated:PropTypes.bool,
 }
 
 export default BottomNav

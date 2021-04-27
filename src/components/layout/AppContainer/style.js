@@ -15,6 +15,7 @@ const useStyles = makeStyles({
 
     noPadding:{
         padding:0,
+        paddingTop:80,
     },
 
     haveBottomNav: {
