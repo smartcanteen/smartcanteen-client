@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from "./style";
 
-export default AppContainer = () => {
+const AppContainer = () => {
     const classes = useStyles();
     return (
         <div>
@@ -9,3 +9,5 @@ export default AppContainer = () => {
         </div>
     )
 }
+
+export default AppContainer
