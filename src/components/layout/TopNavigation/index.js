@@ -31,6 +31,8 @@ const TopNavigation = props => {
 
 TopNavigation.propTypes = {
     isLogoNavigation: PropTypes.bool,
+    withCaption: PropTypes.bool,
+    withIcon:PropTypes.bool
 }
 
 export default TopNavigation

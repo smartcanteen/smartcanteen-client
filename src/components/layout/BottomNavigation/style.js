@@ -40,6 +40,17 @@ const useStyles = makeStyles(theme => ({
             fontSize: 12,
         },
     },
+    floatingMenu:{
+        position:'relative',
+        bottom:'20px',
+        border:'5px solid #FFF',
+        width:80,
+        height:80,
+        color: '#FFF !important',
+    },
+    activeButton:{
+        opacity:1,
+    },
     bottomNavItemSelected: {},
 }));
 

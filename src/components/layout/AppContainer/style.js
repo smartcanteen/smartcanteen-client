@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
     AppContainer: {
         padding: 20,
+        paddingTop:100,
         boxSizing: 'border-box',
         minHeight: '100vh',
     },

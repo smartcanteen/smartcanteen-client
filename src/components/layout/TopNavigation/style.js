@@ -6,7 +6,8 @@ const minHeight = 80
 const useStyles = makeStyles((theme) => ({
     topNavigationWrapper: {
         backgroundColor: theme.palette.background.default,
-        boxShadow:"0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+        // boxShadow:"0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
+        boxShadow:"0 0.5rem 1rem rgba(0, 0, 0, 0.075)",
         borderBottom: '1px solid',
         borderBottomColor: theme.palette.grey[300],
         width:"100%",
