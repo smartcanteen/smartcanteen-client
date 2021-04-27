@@ -8,7 +8,7 @@ const Booth = () => {
             <TopNavigation withCaption>
                 <NavigationCaption caption="Booth"/>
             </TopNavigation>
-            <AppContainer noPadding>
+            <AppContainer noPadding hasBottomNav>
                 <BoothProfileInfo/>
             </AppContainer>
             <BottomNavigation isAuthenticated/>

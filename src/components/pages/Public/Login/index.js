@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Box, Typography, Divider, FormControl, InputLabel, Input, FormHelperText, Button } from '@material-ui/core'
+import { Box, Divider, FormControl, InputLabel, Input, FormHelperText, Button } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert';
 import { AppContainer, TopNavigation } from 'components/layout'
 import { NavigationBack, NavigationCaption } from 'components/shared'
@@ -17,9 +17,6 @@ const Login = () => {
                     <img src={ChefIllustration} alt="illustration" width={250} />
                 </Box>
                 <Box textAlign="center" p={2} color="primary.main" fontWeight="bold">
-                    {/* <Typography variant="body2">
-                        Hai, halaman ini khusus penjual. <br /> Jika kamu tersesat kamu dapat kembali.
-                    </Typography> */}
                     <Alert severity="warning" color="warning">
                         Hai, halaman ini khusus penjual. <br /> Jika kamu tersesat kamu dapat kembali.
                     </Alert>
