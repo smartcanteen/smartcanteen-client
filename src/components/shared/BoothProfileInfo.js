@@ -16,7 +16,6 @@ const BoothProfileInfo = () => {
             <Box className="cover-wrapper">
                 <CoverImage />
             </Box>
-
         </Box>
     )
 }

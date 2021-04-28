@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Box, Button } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert'
 import EmptyBoothImage from 'assets/images/empty-booth-illustration.svg'
@@ -14,9 +15,11 @@ const BoothEmptyCard = () => {
                 </Alert>
             </Box>
             <Box display="flex" justifyContent="center">
-                <Button variant="contained" color="primary" size="large" disableElevation>
-                    Buat Warung Sekarang
-                </Button>
+                <Link to="/booth-add">
+                    <Button variant="contained" color="primary" size="large" disableElevation>
+                        Buat Warung Sekarang
+                    </Button>
+                </Link>
             </Box>
         </Box>
     )
