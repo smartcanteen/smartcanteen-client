@@ -1,6 +1,5 @@
 import React from 'react'
 import { createBrowserHistory } from 'history'
-import { Box } from '@material-ui/core'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Home, Login } from 'components/pages/Public'
 import { ProtectedRoute, Dashboard, Booth, BoothAdd, MenuAdd } from 'components/pages/Private'

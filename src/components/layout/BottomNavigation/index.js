@@ -1,15 +1,13 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
-import { BottomNavigation, BottomNavigationAction, Icon, Fab  } from '@material-ui/core'
+import { BottomNavigation, BottomNavigationAction, Fab  } from '@material-ui/core'
 
 // Icon List For User
 import HomeIcon from '@material-ui/icons/Home';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
-import ListAltIcon from '@material-ui/icons/ListAlt';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 
 // Icon List For Seller

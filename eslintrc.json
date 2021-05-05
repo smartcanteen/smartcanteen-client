@@ -1,0 +1,16 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": "off",
+        "no-unused-vars": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "array-callback-return": "off",
+        "jsx-a11y/anchor-is-valid": "off"
+    }
+}
