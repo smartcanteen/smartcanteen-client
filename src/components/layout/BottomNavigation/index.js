@@ -6,9 +6,11 @@ import { BottomNavigation, BottomNavigationAction, Icon, Fab  } from '@material-
 // Icon List For User
 import HomeIcon from '@material-ui/icons/Home';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
-import StarsIcon from '@material-ui/icons/Stars';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import ListAltIcon from '@material-ui/icons/ListAlt';
+import ReceiptIcon from '@material-ui/icons/Receipt';
 
 // Icon List For Seller
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -58,9 +60,9 @@ const BottomNav = props => {
         menus = [
             { label: "Beranda", value: "/", icon: <HomeIcon/> },
             { label: "Menu", value: "/menus", icon: <FastfoodIcon/> },
-            { label: "", value: "/dashboard", icon: <FloatingMenu icon={<ShoppingBasketIcon/>}/>, active:true },
+            { label: "", value: "/dashboard", icon: <FloatingMenu icon={<ShoppingCartIcon/>}/>, active:true },
             { label: "Penjual", value: "/check-status", icon: <RestaurantMenuIcon/> },
-            { label: "Rekomendasi", value: "/recommendation", icon: <StarsIcon/> },
+            { label: "Pesanan", value: "/check-status", icon: <ReceiptIcon/> },
         ];
     }
 
