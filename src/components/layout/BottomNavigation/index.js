@@ -47,14 +47,16 @@ const BottomNav = props => {
     let menus = []
 
     if(isAuthenticated){
+        // Menus for Seller
         menus = [
             { label: "Dashboard", value: "/dashboard", icon: <DashboardIcon/> },
             { label: "Profile", value: "/profile", icon: <AccountCircleIcon/> },
-            { label: "", value: "/order-list", icon: <FloatingMenu icon={<AlarmAddIcon/>}/>, active:true },
+            { label: "", value: "/order/list", icon: <FloatingMenu icon={<AlarmAddIcon/>}/>, active:true },
             { label: "Booth", value: "/booth", icon: <RoomServiceIcon/> },
-            { label: "Add Menu", value: "/menu-add", icon: <AddBoxIcon/> },
+            { label: "Add Menu", value: "/menu/add", icon: <AddBoxIcon/> },
         ];
     }else{
+        // Menus for Buyer
         menus = [
             { label: "Beranda", value: "/", icon: <HomeIcon/> },
             { label: "Menu", value: "/menus", icon: <FastfoodIcon/> },
@@ -81,7 +83,6 @@ const BottomNav = props => {
                         root: classes.bottomNavItem, 
                         selected: classes.bottomNavItemSelected,
                         label: classes.bottomNavItemLabel,
-                        // active: menu.active?classes.activeButton:''
                     }}
                     className={
                         menu.active?classes.activeButton:''

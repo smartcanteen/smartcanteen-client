@@ -15,7 +15,7 @@ const BoothEmptyCard = () => {
                 </Alert>
             </Box>
             <Box display="flex" justifyContent="center">
-                <Link to="/booth-add">
+                <Link to="/booth/add" style={{textDecoration:'none'}}>
                     <Button variant="contained" color="primary" size="large" disableElevation>
                         Buat Warung Sekarang
                     </Button>

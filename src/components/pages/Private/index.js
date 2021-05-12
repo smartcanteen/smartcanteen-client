@@ -3,10 +3,12 @@ import ProtectedRoute from './ProtectedRoute'
 import Booth from './Booth'
 import BoothAdd from './BoothAdd'
 import MenuAdd from './MenuAdd'
+import Profile from './Profile'
 export {
     Dashboard,
     ProtectedRoute,
     Booth,
     BoothAdd,
-    MenuAdd
+    MenuAdd,
+    Profile
 }

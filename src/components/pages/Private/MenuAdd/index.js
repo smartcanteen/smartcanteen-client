@@ -50,17 +50,17 @@ const MenuAdd = () => {
                         </FormControl>
                     </Box>
                     <Box mb={2}>
-                            <TextField
-                                label="Food Price"
-                                id="standard-start-adornment"
-                                className={clsx(classes.margin, classes.textField)}
-                                InputProps={{
-                                    startAdornment: <InputAdornment position="start">Rp</InputAdornment>,
-                                }}
-                                style={{width:'100%'}}
-                                fullWidth
-                            />
-                            <FormHelperText>Example: 20000</FormHelperText>
+                        <TextField
+                            label="Food Price"
+                            id="standard-start-adornment"
+                            className={clsx(classes.margin, classes.textField)}
+                            InputProps={{
+                                startAdornment: <InputAdornment position="start">Rp</InputAdornment>,
+                            }}
+                            style={{width:'100%'}}
+                            fullWidth
+                        />
+                        <FormHelperText>Example: 20000</FormHelperText>
                     </Box>
                     <Box mb={2}>
                         <FormLabel component="legend">Food Category</FormLabel>
