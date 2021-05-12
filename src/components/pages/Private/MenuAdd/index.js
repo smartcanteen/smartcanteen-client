@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
-import { Box, Input, FormControl, InputLabel, FormHelperText, TextField, InputAdornment, Checkbox, FormGroup, FormControlLabel } from '@material-ui/core'
+import { Box, Button, Input, FormControl, InputLabel, FormHelperText, TextField, InputAdornment, FormLabel, Switch, FormControlLabel } from '@material-ui/core'
 import { TopNavigation, BottomNavigation, AppContainer } from 'components/layout'
-import { NavigationCaption } from 'components/shared'
+import { NavigationCaption, FoodCategoryBox } from 'components/shared'
 import { makeStyles } from '@material-ui/core/styles';
 
 import HamburgerImage from 'assets/images/hamburger-illustration.svg'
@@ -24,6 +24,9 @@ const menuCategories = [{"id":0,"name":"Minuman"},{"id":1,"name":"Makanan Ringan
 
 const MenuAdd = () => {
     const classes = useStyles()
+    
+    const [avaibility, setAvaibility] = useState(true)
+    const handleChangeAvailability = () => setAvaibility(!avaibility)
     return (
         <Box className="menu-add">
             <TopNavigation withCaption>
@@ -59,26 +62,28 @@ const MenuAdd = () => {
                             />
                             <FormHelperText>Example: 20000</FormHelperText>
                     </Box>
-                    <Box>
-                    <h3>Food Category</h3>
-                    <FormGroup>
-                        {menuCategories.map( (category, index) =>
-                            <FormControlLabel
-                                key={category.id}
-                                control={
-                                <Checkbox
-                                    // checked={state.checkedB}
-                                    // onChange={handleChange}
-                                    name={category.name}
-                                    color="primary"
-                                />
-                                }
-                                label={category.name}
-                            />
-                        
-                        )}
+                    <Box mb={2}>
+                        <FormLabel component="legend">Food Category</FormLabel>
+                        <Box flex flexWrap maxWidth="100%" my={1}>
+                            {menuCategories.map( (category, index) =>
+                                <FoodCategoryBox key={index} name={category.name}/>
+                            )}
+                        </Box>
+                    </Box>
 
-                    </FormGroup>
+                    <Box mb={2} justifyContent="center" alignItems="center">
+                        <FormLabel component="legend">Food Avaibility ({avaibility?'Tersedia':'Tidak Tersedia'})</FormLabel>
+                        <Box>
+                            <FormControlLabel
+                            control={<Switch checked={avaibility} onChange={handleChangeAvailability} color="primary" />}
+                            />
+                        </Box>
+                    </Box>
+
+                    <Box mb={3}>
+                        <Button disableElevation fullWidth variant="contained" color="primary" size="large">
+                            Save Data
+                        </Button>
                     </Box>
                 </Box>
 
