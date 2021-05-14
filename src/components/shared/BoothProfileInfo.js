@@ -12,7 +12,7 @@ const foodMenuList = [
     },
     {
         id_makanan:2,
-        nama:'Bubur Ayam Daging Kambing',
+        nama:'Bubur Ayam',
         harga:100000,
         ketersediaan:true
     },
@@ -77,7 +77,7 @@ const BoothProfileInfo = () => {
                         Booth ID: 11cc180d-6358-4cd3-af5a-937f01f891de
                     </Typography>
                     <Typography variant="body2" className={classes.boothDesc}>
-                        Menyediakan makanan dan minuman dengan harga yang sangat terjangkau oleh para mahasiswa low-budged seperti Anda.
+                        Menyediakan makanan dan minuman dengan harga yang sangat terjangkau oleh para mahasiswa low-budget seperti Anda.
                     </Typography>
                 </Box>
                 <Box className="booth-menu-list">

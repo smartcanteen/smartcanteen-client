@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 import MenuCoverImage from 'assets/images/MenuCoverImage.png'
-const imageSize = 80
+const imageSize = 85
 
 const useStyles = makeStyles({
     menuCardWrapper:{
@@ -15,11 +15,17 @@ const useStyles = makeStyles({
     menuImage:{
         minWidth:imageSize,
         minHeight:imageSize,
-        backgroundSize:'cover'
+        maxHeight:imageSize,
+        backgroundSize:'cover',
+        backgroundPosition:'center center'
     },
     foodName:{
         fontWeight:'bold',
         color:'#333'
+    },
+    foodId:{
+        opacity:'0.5',
+        fontSize:10
     },
     addToCartBtn:{
         minHeight:50
@@ -35,13 +41,16 @@ const MenuCard = props => {
     return (
             <Box className={classes.menuCardWrapper}>
                 <Box style={{backgroundImage:`url(${MenuCoverImage})`}} className={classes.menuImage}/>
-                <Box p={1} width='100%'>
+                <Box paddingX={1} width='100%'>
                     <Typography variant="subtitle1" className={classes.foodName}>
                         {foodName}
                     </Typography>
-                    <Box display="flex">
+                    <Box >
                         <Typography variant="body2">
                             {foodPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")},-
+                        </Typography>
+                        <Typography variant="caption" className={classes.foodId} gutterBottom>
+                            Food ID: 11cc180d-6358-4cd3-af5a-937f01f891de
                         </Typography>
                     </Box>
                 </Box>
