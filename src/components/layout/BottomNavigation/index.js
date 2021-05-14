@@ -58,11 +58,11 @@ const BottomNav = props => {
     }else{
         // Menus for Buyer
         menus = [
-            { label: "Beranda", value: "/", icon: <HomeIcon/> },
+            { label: "Home", value: "/", icon: <HomeIcon/> },
             { label: "Menu", value: "/menus", icon: <FastfoodIcon/> },
             { label: "", value: "/dashboard", icon: <FloatingMenu icon={<ShoppingCartIcon/>}/>, active:true },
-            { label: "Penjual", value: "/check-status", icon: <RestaurantMenuIcon/> },
-            { label: "Pesanan", value: "/check-status", icon: <ReceiptIcon/> },
+            { label: "Booth", value: "/check-status", icon: <RestaurantMenuIcon/> },
+            { label: "Order", value: "/check-status", icon: <ReceiptIcon/> },
         ];
     }
 

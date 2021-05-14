@@ -28,7 +28,7 @@ const SellerProfileBox = props => {
     return (
         <React.Fragment>
             <Box mb={2} color="#FFF">
-                <FormControl fullWidth className={classes.formControlStyle} >
+                <FormControl fullWidth >
                     <TextField disabled label="Seller ID" variant="filled" id="seller-id" defaultValue="ab6295f0-2c72-4ef4-9fac-c047463a1227" />
                 </FormControl>
             </Box>
@@ -92,8 +92,7 @@ const SellerProfileBox = props => {
                             disableElevation
                             variant="contained"
                             color="primary"
-                            size="small"
-                            className={classes.button}
+                            size="medium"
                             startIcon={<EditIcon />}>
                             Edit Profile
                         </Button>

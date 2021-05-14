@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 const containerWidth = 415
-const minHeight = 80
+// const minHeight = 80
 
 const useStyles = makeStyles((theme) => ({
     topNavigationWrapper: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottomColor: theme.palette.grey[300],
         width:"100%",
         margin: "0 auto",
-        minHeight,
+        // minHeight,
         [theme.breakpoints.up('sm')]: {
             maxWidth: containerWidth,
         },

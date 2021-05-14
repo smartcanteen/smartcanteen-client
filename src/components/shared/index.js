@@ -5,6 +5,7 @@ import CoverImage from './CoverImage'
 import BoothEmptyCard from './BoothEmptyCard'
 import FoodCategoryBox from './FoodCategoryBox'
 import SellerProfileBox from './SellerProfileBox'
+import MenuCard from './MenuCard'
 export {
     NavigationBack,
     NavigationCaption,
@@ -12,5 +13,6 @@ export {
     CoverImage,
     BoothEmptyCard,
     FoodCategoryBox,
-    SellerProfileBox
+    SellerProfileBox,
+    MenuCard
 }
