@@ -17,6 +17,7 @@ const FoodCategoryBox = props => {
             color="primary"
             size="small"
             className={classes.btnCategory}
+            disableElevation
         >
             {name}
         </Button>

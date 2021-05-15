@@ -6,38 +6,44 @@ import { CoverImage, BoothEmptyCard, MenuCard } from 'components/shared'
 const foodMenuList = [
     {
         id_makanan:1,
-        nama:'Nasi Goreng Murah Banget',
+        nama:'Nasi Goreng Murah',
         harga:150000,
+        kategori:'Makanan, Nasi, Fast Food',
         ketersediaan:true
     },
     {
         id_makanan:2,
         nama:'Bubur Ayam',
         harga:100000,
+        kategori:'Makanan, Nasi, Bubur',
         ketersediaan:true
     },
     {
         id_makanan:3,
         nama:'Nasi Tim Daging Kambing',
         harga:80000,
+        kategori:'Makanan, Nasi, Daging',
         ketersediaan:true
     },
     {
         id_makanan:4,
         nama:'Nasi Steak Daging Ayam',
         harga:120000,
+        kategori:'Makanan, Nasi, Daging, Western',
         ketersediaan:true
     },
     {
         id_makanan:5,
         nama:'Air Mineral Ada Manis-manisnya',
         harga:10000,
+        kategori:'Minuman',
         ketersediaan:false
     },
     {
         id_makanan:6,
         nama:'Jus Alpukat',
         harga:50000,
+        kategori:'Minuman',
         ketersediaan:true
     },
 ]
@@ -88,15 +94,9 @@ const BoothProfileInfo = () => {
                     </Box>
                     <Box>
                         {
-                            foodMenuList.filter( menu => menu.ketersediaan === true ).map((food,index) =>
-                                <MenuCard key={index} foodName={food.nama} foodPrice={food.harga}/>
-                            )}
-                        {/* <MenuCard/>
-                        <MenuCard/>
-                        <MenuCard/>
-                        <MenuCard/>
-                        <MenuCard/>
-                        <MenuCard/> */}
+                        foodMenuList.filter( menu => menu.ketersediaan === true ).map((food,index) =>
+                            <MenuCard key={index} foodName={food.nama} foodPrice={food.harga} foodCategory={food.kategori} isEdit/>
+                        )}
                     </Box>
                 </Box>
             </Box>

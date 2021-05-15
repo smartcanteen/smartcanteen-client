@@ -5,12 +5,14 @@ import BoothAdd from './BoothAdd'
 import MenuAdd from './MenuAdd'
 import Profile from './Profile'
 import ProfileEdit from './ProfileEdit'
+import MenuEdit from './MenuEdit'
 export {
     Dashboard,
     ProtectedRoute,
     Booth,
     BoothAdd,
     MenuAdd,
+    MenuEdit,
     Profile,
     ProfileEdit
 }

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     textField: {
       width: '25ch',
     },
-  }));
+}));
 
 const menuCategories = [{"id":0,"name":"Minuman"},{"id":1,"name":"Makanan Ringan"},{"id":2,"name":"Manisan & Dessert"},{"id":3,"name":"Nasi"},{"id":4,"name":"Fast Food"},{"id":5,"name":"Roti"},{"id":6,"name":"Japanese"},{"id":7,"name":"Bakso & Soto"},{"id":8,"name":"Mi"},{"id":9,"name":"Korean"},{"id":10,"name":"Kopi"},{"id":11,"name":"Martabak"},{"id":12,"name":"Pizza & Pasta"},{"id":13,"name":"Chinese"},{"id":14,"name":"Sate"},{"id":15,"name":"Western"},{"id":16,"name":"Seafood"},{"id":17,"name":"Thai"},{"id":18,"name":"Indian"},{"id":19,"name":"Aceh"},{"id":20,"name":"Bali"},{"id":21,"name":"Daging"},{"id":22,"name":"Mexican"}]
 
