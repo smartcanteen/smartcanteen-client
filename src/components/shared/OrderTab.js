@@ -76,7 +76,7 @@ function a11yProps(index) {
   }
 
 const OrderTab = () => {
-    const [value, setValue] = React.useState(2);
+    const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -88,6 +88,7 @@ const OrderTab = () => {
                 indicatorColor="primary"
                 textColor="primary"
                 onChange={handleChange}
+                variant="fullWidth"
             >
                 <Tab label="Dipesan" {...a11yProps(0)}/>
                 <Tab label="Diproses" {...a11yProps(1)}/>

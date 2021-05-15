@@ -24,19 +24,23 @@ const useStyles = makeStyles( theme => ({
             border:"1px solid",
             borderColor:theme.palette.primary.contrastText,
          },
-    },
-    active:{
-        background:'#dfe6e9',
-        color:theme.palette.primary.main,
-        textTransform:'capitalize',
-        margin:4,
-        '&:hover': {
-            color:theme.palette.primary.contrastText,
-            border:"1px solid",
-            borderColor:theme.palette.primary.contrastText,
-         },
-    }
-}))
+        },
+
+        active:{
+            background:'#dfe6e9',
+            color:theme.palette.primary.main,
+            textTransform:'capitalize',
+            margin:4,
+            '& span':{
+                color:theme.palette.primary.dark
+            },
+            '&:hover': {
+                color:theme.palette.primary.contrastText,
+                border:"1px solid",
+                borderColor:theme.palette.primary.contrastText,
+            },
+        }
+    }))
 
 const OrderCard = props => {
     const classes = useStyles()
@@ -58,13 +62,13 @@ const OrderCard = props => {
                 </ul>
             </Box>
             <Box display="flex" justifyContent="space-between" py={1}>
-                <Button fullWidth className={ordered?classes.active:classes.deactive} disableElevation>
+                <Button disabled={ordered} fullWidth className={ordered?classes.active:classes.deactive} disableElevation color="primary.main">
                     Dipesan
                 </Button>
-                <Button fullWidth className={processed?classes.active:classes.deactive} disableElevation>
+                <Button disabled={processed} fullWidth className={processed?classes.active:classes.deactive} disableElevation>
                     Diproses
                 </Button>
-                <Button fullWidth className={finished?classes.active:classes.deactive} disableElevation>
+                <Button disabled={finished} fullWidth className={finished?classes.active:classes.deactive} disableElevation>
                     Selesai
                 </Button>
             </Box>
