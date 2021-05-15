@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import clsx from 'clsx'
-import { Box, Button, Input, FormControl, InputLabel, FormHelperText, TextField, InputAdornment, FormLabel, Switch, FormControlLabel } from '@material-ui/core'
+import { Box, Button, FormControl, TextField, InputAdornment, FormLabel, Switch, FormControlLabel } from '@material-ui/core'
 import { TopNavigation, BottomNavigation, AppContainer } from 'components/layout'
 import { NavigationCaption, FoodCategoryBox, NavigationBack } from 'components/shared'
 import { makeStyles } from '@material-ui/core/styles';
-
-import CakeImage from 'assets/images/cake-illustration.svg'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -80,7 +78,7 @@ const MenuEdit = props => {
 
                     <Box mb={3}>
                         <Button disableElevation fullWidth variant="contained" color="primary" size="large" onClick={goBack}>
-                            Update Data
+                            Edit Data
                         </Button>
                     </Box>
                 </Box>

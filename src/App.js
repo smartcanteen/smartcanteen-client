@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserHistory } from 'history'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Home, Login } from 'components/pages/Public'
-import { ProtectedRoute, Dashboard, Booth, BoothAdd, MenuAdd, Profile, ProfileEdit, MenuEdit } from 'components/pages/Private'
+import { ProtectedRoute, Dashboard, Booth, BoothAdd, MenuAdd, Profile, ProfileEdit, MenuEdit, Order } from 'components/pages/Private'
 import { AppWrapper } from 'components/layout'
 
 export const history = createBrowserHistory()
@@ -20,6 +20,7 @@ const App = () => {
           <ProtectedRoute path="/menu/edit" component={MenuEdit} exact/>
           <ProtectedRoute path="/profile" component={Profile} exact/>
           <ProtectedRoute path="/profile/edit" component={ProfileEdit} exact/>
+          <ProtectedRoute path="/order" component={Order} exact/>
         </Switch>
       </Router>
     </AppWrapper>

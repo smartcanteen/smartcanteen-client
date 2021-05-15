@@ -6,6 +6,7 @@ import MenuAdd from './MenuAdd'
 import Profile from './Profile'
 import ProfileEdit from './ProfileEdit'
 import MenuEdit from './MenuEdit'
+import Order from './Order'
 export {
     Dashboard,
     ProtectedRoute,
@@ -14,5 +15,6 @@ export {
     MenuAdd,
     MenuEdit,
     Profile,
-    ProfileEdit
+    ProfileEdit,
+    Order
 }
