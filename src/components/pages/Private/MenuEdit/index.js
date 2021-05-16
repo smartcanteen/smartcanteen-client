@@ -36,6 +36,15 @@ const MenuEdit = props => {
             </TopNavigation>
 
             <AppContainer hasBottomNav>
+                <Box mb={2}>
+                    <TextField
+                        disabled
+                        label="Food ID"
+                        className={clsx(classes.margin, classes.textField)}
+                        style={{ width: '100%' }}
+                        defaultValue="16406286-9c31-420e-b67e-3b226ef81034"
+                    />
+                </Box>
                 <Box minHeight="80vh" display="flex" flexDirection="column">
                     <Box mb={2}>
                         <FormControl fullWidth>

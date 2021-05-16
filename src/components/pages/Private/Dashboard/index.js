@@ -35,10 +35,13 @@ const Dashboard = () => {
                 <NavigationCaption caption="Dashboard" />
             </TopNavigation>
             <AppContainer hasBottomNav>
-                <Box mb={3} display="flex" justifyContent="space-between">
-                    <AnalyticsCard title="Today Order" value={6}/>
-                    <AnalyticsCard title="Today Income" value={800000}/>
-                    <AnalyticsCard title="Today Buyer" value={100}/>
+                <Box mb={3}>
+                    <TitleSection title="Today Report's"/> 
+                    <Box display="flex" justifyContent="space-between">
+                        <AnalyticsCard title="Today Order" value={6}/>
+                        <AnalyticsCard title="Today Income" value={800000}/>
+                        <AnalyticsCard title="Today Buyer" value={100}/>
+                    </Box>
                 </Box>
                 <Box mb={3}>
                     <TitleSection title="Sales Statistic"/>
