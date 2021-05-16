@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Typography } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import {
   BarChart, 
   Bar, 
@@ -10,7 +10,6 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-import { makeStyles } from '@material-ui/core/styles'
 
 const staticDatas = [
   { name: "Senin", pv: 44 },
@@ -22,20 +21,9 @@ const staticDatas = [
   { name: "Minggu", pv: 3 },
 ];
 
-const useStyles = makeStyles( theme => ({
-    chartTitle:{
-        fontWeight:'bold',
-        color: theme.palette.primary.dark
-    }
-}))
-
 const Chart = () => {
-  const classes = useStyles()
   return (
-    <Card className={classes.chartWrapper} elevation={0}>
-      <Typography variant="overline" className={classes.chartTitle}>
-        Sales Statistic
-      </Typography>
+    <Card  elevation={0}>
       <div style={{ width: "100%", height: 250 }}>
         <ResponsiveContainer>
           <BarChart

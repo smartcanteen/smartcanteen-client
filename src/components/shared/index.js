@@ -10,7 +10,7 @@ import OrderCard from './OrderCard'
 import OrderTab from './OrderTab'
 import AnalyticsCard from './AnalyticsCard'
 import StatisticChart from './StatisticChart'
-
+import TitleSection from './TitleSection'
 export {
     NavigationBack,
     NavigationCaption,
@@ -23,5 +23,6 @@ export {
     OrderCard,
     OrderTab,
     AnalyticsCard,
-    StatisticChart
+    StatisticChart,
+    TitleSection
 }
