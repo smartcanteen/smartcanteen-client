@@ -8,6 +8,7 @@ import SellerProfileBox from './SellerProfileBox'
 import MenuCard from './MenuCard'
 import OrderCard from './OrderCard'
 import OrderTab from './OrderTab'
+import AnalyticsCard from './AnalyticsCard'
 export {
     NavigationBack,
     NavigationCaption,
@@ -18,5 +19,6 @@ export {
     SellerProfileBox,
     MenuCard,
     OrderCard,
-    OrderTab
+    OrderTab,
+    AnalyticsCard
 }

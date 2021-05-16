@@ -9,7 +9,7 @@ export const history = createBrowserHistory()
 const App = () => {
   return (
     <AppWrapper className="App">
-      <Router history>
+      <Router {...history}>
         <Switch>
           <Route path="/" component={Home} exact/>
           <Route path="/login" component={Login} exact/>
