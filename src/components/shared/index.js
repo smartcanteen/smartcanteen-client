@@ -9,6 +9,8 @@ import MenuCard from './MenuCard'
 import OrderCard from './OrderCard'
 import OrderTab from './OrderTab'
 import AnalyticsCard from './AnalyticsCard'
+import StatisticChart from './StatisticChart'
+
 export {
     NavigationBack,
     NavigationCaption,
@@ -20,5 +22,6 @@ export {
     MenuCard,
     OrderCard,
     OrderTab,
-    AnalyticsCard
+    AnalyticsCard,
+    StatisticChart
 }
