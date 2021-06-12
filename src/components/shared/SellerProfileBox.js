@@ -7,6 +7,10 @@ import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { updateSeller } from "configs/api";
+
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZW5qdWFsIjoiMWQzYWQwOGItNGYyYi00YjhlLTgyMGItMDg4ZGFiYmU2NWRmIiwiZmlyc3RfbmFtZSI6Ik5vdml0YXMiLCJsYXN0X25hbWUiOiJHYW50ZW5rcyIsImVtYWlsIjoiZGV2QGdtYWlsLmNvbSIsIm5vX3RlbHAiOiIwODEyMzEyMzQxMjMiLCJjcmVhdGVkQXQiOiIyMDIxLTA1LTE1IDExOjMxOjA2IiwiaWRfd2FydW5nIjoiZDE4MjI5YzAtM2JhMC00ZGY5LWJiMjEtZGE5NTVjY2M4M2U2IiwiaXNBZG1pbiI6ZmFsc2UsImlzU2VsbGVyIjp0cnVlLCJpYXQiOjE2MjM1MTI5ODl9.peJeSU0Bi4Qkbp32WK1Z-M3ALCf4qjExWKm5X4AMQ5Y"
+
 const useStyles = makeStyles({
     formControlStyle: {
         '& .MuiFormControl-root': {
@@ -20,45 +24,69 @@ const useStyles = makeStyles({
 
 })
 const SellerProfileBox = props => {
-    const { readOnly, editProfile, history } = props
-    const goBack = () => history.goBack()
+    const { readOnly, editProfile, history, data } = props
+    const [sellerData, setSellerData] = useState(data);
+    const goBack = async () => {
+
+        const berhasil = await updateSellerData(token,sellerData)
+        if (berhasil.success) history.goBack()
+        else{
+            // alert disini
+            console.log(berhasil.data[0].message)
+        }
+    }
+    const updateSellerData = async (token, sellerData) => {
+        delete sellerData.tenant
+        delete sellerData.id_penjual
+        delete sellerData.createdAt
+        if (sellerData.password == "password" || sellerData.password == "") delete sellerData.password
+        const response = await updateSeller(token,sellerData);
+        return response?.data
+    };
+    
+    function handleField(e) {
+        let lastData = sellerData
+        lastData[e.target.id] = e.target.value
+        setSellerData(lastData)
+    }
     const classes = useStyles()
     const [showPassword, setShowPassword] = useState(false)
     const handleShowPassword = () => setShowPassword(!showPassword)
+    
     return (
         <React.Fragment>
             <Box mb={2} color="#FFF">
                 <FormControl fullWidth >
-                    <TextField disabled label="Seller ID" variant="filled" id="seller-id" defaultValue="ab6295f0-2c72-4ef4-9fac-c047463a1227" />
+                    <TextField disabled label="Seller ID" variant="filled" id="seller-id" defaultValue={sellerData?.id_penjual} />
                 </FormControl>
             </Box>
             <Box mb={2} display="flex" justifyContent="space-between">
                 <Box maxWidth="46.5%">
                     <FormControl className={classes.formControlStyle}>
-                        <TextField disabled={readOnly} label="First Name" variant="filled" id="first-name" defaultValue="Athalla" />
+                        <TextField disabled={readOnly} onChange={handleField} label="First Name" variant="filled" id="first_name" defaultValue={sellerData?.first_name}/>
                     </FormControl>
                 </Box>
                 <Box maxWidth="46.5%">
                     <FormControl className={classes.formControlStyle}>
-                        <TextField disabled={readOnly} label="Last Name" variant="filled" id="last-name" defaultValue="Rizky" />
+                        <TextField disabled={readOnly} onChange={handleField} label="Last Name" variant="filled" id="last_name" defaultValue={sellerData?.last_name} />
                     </FormControl>
                 </Box>
             </Box>
             <Box mb={2}>
                 <FormControl fullWidth className={classes.formControlStyle}>
-                    <TextField disabled={readOnly} label="Email" variant="filled" id="email" defaultValue="athalla@smartcanteen.com" />
+                    <TextField disabled={readOnly} onChange={handleField} label="Email" variant="filled" id="email" defaultValue={sellerData?.email} />
                 </FormControl>
             </Box>
             <Box mb={2}>
                 <FormControl fullWidth className={classes.formControlStyle}>
-                    <TextField disabled={readOnly} label="Phone Number" variant="filled" id="phoneNumb" defaultValue="081287651234" />
+                    <TextField disabled={readOnly} onChange={handleField} label="Phone Number" variant="filled" id="no_telp" defaultValue={sellerData?.no_telp} />
                 </FormControl>
             </Box>
 
             {editProfile && (
                 <Box mb={2}>
                     <FormControl fullWidth className={classes.formControlStyle}>
-                        <TextField disabled={readOnly} label="Password" variant="filled" id="password" defaultValue="athalla ganteng banget" type={showPassword ? 'text' : 'password'}
+                        <TextField disabled={readOnly} onChange={handleField} label="New Password" variant="filled" id="password" defaultValue="password" type={showPassword ? 'text' : 'password'}
                             InputProps={{
                                 endAdornment:
                                     <IconButton onClick={handleShowPassword}>
@@ -101,6 +129,7 @@ const SellerProfileBox = props => {
             </Box>
         </React.Fragment>
     )
+    
 }
 
 SellerProfileBox.propTypes = {
