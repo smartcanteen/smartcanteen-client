@@ -64,7 +64,7 @@ const useStyles = makeStyles( theme => ({
     }
 }))
 const BoothProfileInfo = (props) => {
-    const { data } = props
+    const { data, booth } = props
     console.log(data.filter( menu => menu.ketersediaan === false ))
     const isEmptyBooth = false
     const classes = useStyles()
@@ -79,13 +79,13 @@ const BoothProfileInfo = (props) => {
             <Box p={2}>
                 <Box className="booth-info">
                     <Typography variant="h6" className={classes.boothName}>
-                        Warung Athalla
+                        {booth.nama_warung}
                     </Typography>
                     <Typography variant="caption" className={classes.boothId} gutterBottom>
-                        Booth ID: 11cc180d-6358-4cd3-af5a-937f01f891de
+                        Booth ID: {booth.id_warung}
                     </Typography>
                     <Typography variant="body2" className={classes.boothDesc}>
-                        Menyediakan makanan dan minuman dengan harga yang sangat terjangkau oleh para mahasiswa low-budget seperti Anda.
+                        {booth.deskripsi}
                     </Typography>
                 </Box>
                 <Box className="booth-menu-list">
