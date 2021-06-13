@@ -40,7 +40,8 @@ const useStyles = makeStyles( theme => ({
 }))
 const MenuCard = props => {
     const classes = useStyles()
-    const { foodName, foodPrice, foodCategory, isEdit, isBuy } = props
+    const { foodName, foodPrice, foodCategory, isEdit, isBuy, id, sold } = props
+    const linkEdit = `/menu/edit?id=${id}`
     return (
             <Box className={classes.menuCardWrapper}>
                 <Box style={{backgroundImage:`url(${MenuCoverImage})`}} className={classes.menuImage}/>
@@ -52,6 +53,9 @@ const MenuCard = props => {
                         <Typography variant="body2">
                             {foodPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")},-
                         </Typography>
+                        {sold && (<Typography variant="caption">
+                            {"Terjual: "+sold}
+                        </Typography>)}
                         <Typography variant="caption" className={classes.foodCategory} gutterBottom>
                             { foodCategory }
                             {/* Food ID: 11cc180d-6358-4cd3-af5a-937f01f891de */}
@@ -63,7 +67,7 @@ const MenuCard = props => {
                 </Box>
                 <Box display="flex" alignItems="flex-end" justifyContent="center">
                     {isEdit && (
-                        <Link to="/menu/edit" style={{textDecoration:'none'}}>
+                        <Link to={linkEdit} style={{textDecoration:'none'}}>
                             <Button color="primary" disableElevation className={classes.addToCartBtn}>
                                 <Box>
                                     <EditIcon fontSize="small"/>
