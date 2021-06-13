@@ -63,7 +63,9 @@ const useStyles = makeStyles( theme => ({
         marginBottom: 10
     }
 }))
-const BoothProfileInfo = () => {
+const BoothProfileInfo = (props) => {
+    const { data } = props
+    console.log(data.filter( menu => menu.ketersediaan === false ))
     const isEmptyBooth = false
     const classes = useStyles()
     if (isEmptyBooth) {
@@ -94,10 +96,23 @@ const BoothProfileInfo = () => {
                     </Box>
                     <Box>
                         {
-                        foodMenuList.filter( menu => menu.ketersediaan === true ).map((food,index) =>
-                            <MenuCard key={index} foodName={food.nama} foodPrice={food.harga} foodCategory={food.kategori} isEdit/>
+                        data.filter( menu => menu.ketersediaan === true ).map((food,index) =>
+                            <MenuCard key={index} foodName={food.nama} foodPrice={food.harga} foodCategory={food.kategori} id={food.id_makanan} isEdit/>
                         )}
                     </Box>
+                    {data.filter( menu => menu.ketersediaan === false ).length>0 && 
+                    (   <Box color="primary.main">
+                            <Typography variant="subtitle1" className={classes.menuHeading}>
+                                Sedang Tidak Tersedia
+                            </Typography>
+                        </Box>
+                    )}
+                    {data.filter( menu => menu.ketersediaan === false ).length>0 && (<Box>
+                        {
+                        data.filter( menu => menu.ketersediaan === false ).map((food,index) =>
+                            <MenuCard key={index} foodName={food.nama} foodPrice={food.harga} foodCategory={food.kategori} id={food.id_makanan} isEdit/>
+                        )}
+                    </Box>)}
                 </Box>
             </Box>
         </Box>
