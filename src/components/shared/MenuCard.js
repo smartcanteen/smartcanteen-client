@@ -6,13 +6,15 @@ import { makeStyles } from '@material-ui/core/styles'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import EditIcon from '@material-ui/icons/Edit';
 
+import InputCounter from 'components/shared/InputCounter'
+
 import MenuCoverImage from 'assets/images/MenuCoverImage.png'
 const imageSize = 85
 
 const useStyles = makeStyles( theme => ({
     menuCardWrapper:{
         display:'flex',
-        marginBottom:10
+        marginBottom:10,
     },
     menuImage:{
         minWidth:imageSize,
@@ -40,7 +42,7 @@ const useStyles = makeStyles( theme => ({
 }))
 const MenuCard = props => {
     const classes = useStyles()
-    const { foodName, foodPrice, foodCategory, isEdit, isBuy } = props
+    const { foodName, foodPrice, foodCategory, isEdit, isBuy, isCounter } = props
     return (
             <Box className={classes.menuCardWrapper}>
                 <Box style={{backgroundImage:`url(${MenuCoverImage})`}} className={classes.menuImage}/>
@@ -61,6 +63,14 @@ const MenuCard = props => {
                         </Typography>
                     </Box>
                 </Box>
+                {
+                    isCounter && (
+                        <Box display="flex" alignItems="center" justifyContent="center">
+                            <InputCounter/>
+                        </Box>
+
+                    )
+                }
                 <Box display="flex" alignItems="flex-end" justifyContent="center">
                     {isEdit && (
                         <Link to="/menu/edit" style={{textDecoration:'none'}}>
@@ -96,6 +106,7 @@ MenuCard.propTypes = {
     foodPrice: PropTypes.string,
     isEdit: PropTypes.bool,
     isBuy: PropTypes.bool,
+    isCounter: PropTypes.bool
 }
 
 export default MenuCard

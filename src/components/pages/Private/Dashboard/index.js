@@ -36,7 +36,7 @@ const Dashboard = () => {
             </TopNavigation>
             <AppContainer hasBottomNav>
                 <Box mb={3}>
-                    <TitleSection title="Today Report's"/> 
+                    <TitleSection title="Daily Report's"/> 
                     <Box display="flex" justifyContent="space-between">
                         <AnalyticsCard title="Today Order" value={6}/>
                         <AnalyticsCard title="Today Income" value={800000}/>

@@ -61,7 +61,7 @@ const BottomNav = props => {
             { label: "Home", value: "/", icon: <HomeIcon/> },
             { label: "Menu", value: "/menus", icon: <FastfoodIcon/> },
             { label: "", value: "/dashboard", icon: <FloatingMenu icon={<ShoppingCartIcon/>}/>, active:true },
-            { label: "Booth", value: "/check-status", icon: <RestaurantMenuIcon/> },
+            { label: "Booth", value: "/booth-list", icon: <RestaurantMenuIcon/> },
             { label: "Order", value: "/check-status", icon: <ReceiptIcon/> },
         ];
     }
