@@ -4,14 +4,13 @@ import { TopNavigation, BottomNavigation, AppContainer } from 'components/layout
 import { NavigationCaption, SellerProfileBox, NavigationBack } from 'components/shared'
 import { getDetailSeller } from "configs/api";
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZW5qdWFsIjoiMWQzYWQwOGItNGYyYi00YjhlLTgyMGItMDg4ZGFiYmU2NWRmIiwiZmlyc3RfbmFtZSI6Ik5vdml0YXMiLCJsYXN0X25hbWUiOiJHYW50ZW5rcyIsImVtYWlsIjoiZGV2QGdtYWlsLmNvbSIsIm5vX3RlbHAiOiIwODEyMzEyMzQxMjMiLCJjcmVhdGVkQXQiOiIyMDIxLTA1LTE1IDExOjMxOjA2IiwiaWRfd2FydW5nIjoiZDE4MjI5YzAtM2JhMC00ZGY5LWJiMjEtZGE5NTVjY2M4M2U2IiwiaXNBZG1pbiI6ZmFsc2UsImlzU2VsbGVyIjp0cnVlLCJpYXQiOjE2MjM0ODc5Mzd9.v7ubgiJZMsPJAgj1amo-slFd5VxP93r6YxcyvwedzPQ"
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZW5qdWFsIjoiMWQzYWQwOGItNGYyYi00YjhlLTgyMGItMDg4ZGFiYmU2NWRmIiwiZmlyc3RfbmFtZSI6IlBlbmp1YWwiLCJsYXN0X25hbWUiOiJEZXYiLCJlbWFpbCI6ImRldkBnbWFpbC5jb20iLCJub190ZWxwIjoiMDgxMjMxMjM0MTIzIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0xMyAxMjo1ODowNyIsImlkX3dhcnVuZyI6ImQxODIyOWMwLTNiYTAtNGRmOS1iYjIxLWRhOTU1Y2NjODNlNiIsImlzQWRtaW4iOmZhbHNlLCJpc1NlbGxlciI6dHJ1ZSwiaWF0IjoxNjIzNTg5MTAyfQ.e9Jm05oDzj_LEymd5lkGxWJ6JvOILSjbLcCSui45Hu4"
 
 const ProfileEdit = () => {
     // const {token} = {token} //useRecoilValue(authState);
     // const { uuid } = {uuid:"1d3ad08b-4f2b-4b8e-820b-088dabbe65df")//props.match.params
     const [sellerData, setSellerData] = useState();
-    // const dataAwal = { first_name:"", last_name:"", email:"", no_telp:"", id_penjual:"" }
-    // const [foodData, setFoodData] = useState();
+    
     useEffect(() => {
         const getSellerData = async () => {
             const response = await getDetailSeller(token);
