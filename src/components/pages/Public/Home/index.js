@@ -18,7 +18,7 @@ const Home = () => {
     const [foodData, setFoodData] = useState();
     useEffect(() => {
         const getRekomenFoodData = async () => {
-            const response = await getFoodManyOrder("?kategori=Sarapan");
+            const response = await getFoodManyOrder("?kategori=Makan Siang");
             const { data } = response?.data;
             if(response.data.success){
                 await setFoodData(data);
