@@ -22,10 +22,7 @@ const App = () => {
           <ProtectedRoute path="/profile/edit" component={ProfileEdit} exact/>
           <ProtectedRoute path="/order" component={Order} exact/>
           <Route path="/menus" component={Menus} exact/>
-          <Route path="/menus/favourite" component={MenuFavourite} exact/>
-          <Route path="/menus/laris" component={MenuFavourite} exact/>
-          <Route path="/menus/murah" component={MenuFavourite} exact/>
-          <Route path="/menus/murah" component={MenuFavourite} exact/>
+          <Route path="/menus/:ket" component={MenuFavourite} exact/>
           <Route path="/check-status" component={OrderList} exact/>
         </Switch>
       </Router>

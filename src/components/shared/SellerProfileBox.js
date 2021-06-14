@@ -39,7 +39,7 @@ const SellerProfileBox = props => {
         delete sellerData.tenant
         delete sellerData.id_penjual
         delete sellerData.createdAt
-        if (sellerData.password == "password" || sellerData.password == "") delete sellerData.password
+        if (sellerData.password === "password" || sellerData.password === "") delete sellerData.password
         const response = await updateSeller(token,sellerData);
         return response?.data
     };
