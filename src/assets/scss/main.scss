@@ -3,11 +3,13 @@
     padding: 0;
 }
 html, body{
-    background-color: #f1f1f1;
+    // background-color: #f1f1f1;
+    background: #f5f5f5 url('../images/bg-pattern.png') repeat 50%/300px;
+    background-attachment: fixed;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    @import './pages/home';
     overflow: scroll;
     overflow-x: hidden;
+    @import './pages/home';
 }
 
 ::-webkit-scrollbar {

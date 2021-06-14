@@ -18,7 +18,7 @@ const foodMenuList = [
         kategori:'Makanan, Nasi, Bubur',
         ketersediaan:true
     },
-    {
+    { 
         id_makanan:3,
         nama:'Nasi Tim Daging Kambing',
         harga:80000,
