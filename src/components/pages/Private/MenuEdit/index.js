@@ -69,10 +69,10 @@ const MenuEdit = props => {
     const id = query.get("id")
     const classes = useStyles()
     const [avaibility, setAvaibility] = useState(true)
-    const [MenuCategory, setMenuCategory] = useState(true)
+    // const [MenuCategory, setMenuCategory] = useState(true)
     const handleChangeAvailability = () => setAvaibility(!avaibility)
     const goBack = () => history.goBack()
-    const MenuCateg = setCategory("Nasi,Bali")
+    // const MenuCateg = setCategory("Nasi,Bali")
     
     // const {token} = {token} //useRecoilValue(authState);
     // const { uuid } = {uuid:"1d3ad08b-4f2b-4b8e-820b-088dabbe65df")//props.match.params

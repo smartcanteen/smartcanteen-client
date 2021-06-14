@@ -50,3 +50,29 @@ export const getFoodManyOrderSeller = async (token) => {
       return "Failed"
   }
 };
+
+export const getFoodManyOrder = async (query="") => {
+  try{
+      return await axios
+        .get("/makanan/manyOrder"+query)
+    
+        .then((res) => res)
+        .catch((err) => err.response);
+
+  }catch{
+      return "Failed"
+  }
+};
+
+export const getFoodOrderByHarga = async (query="") => {
+  try{
+      return await axios
+        .get("/makanan/murah"+query)
+    
+        .then((res) => res)
+        .catch((err) => err.response);
+
+  }catch{
+      return "Failed"
+  }
+};

@@ -6,31 +6,6 @@ import { getFoodManyOrderSeller } from "configs/api";
 
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9wZW5qdWFsIjoiMWQzYWQwOGItNGYyYi00YjhlLTgyMGItMDg4ZGFiYmU2NWRmIiwiZmlyc3RfbmFtZSI6IlBlbmp1YWwiLCJsYXN0X25hbWUiOiJEZXYiLCJlbWFpbCI6ImRldkBnbWFpbC5jb20iLCJub190ZWxwIjoiMDgxMjMxMjM0MTIzIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0xMyAxMjo1ODowNyIsImlkX3dhcnVuZyI6ImQxODIyOWMwLTNiYTAtNGRmOS1iYjIxLWRhOTU1Y2NjODNlNiIsImlzQWRtaW4iOmZhbHNlLCJpc1NlbGxlciI6dHJ1ZSwiaWF0IjoxNjIzNTg5MTAyfQ.e9Jm05oDzj_LEymd5lkGxWJ6JvOILSjbLcCSui45Hu4"
 
-const bestFood = [
-    {
-        id_makanan:1,
-        nama:'Nasi Goreng Murah',
-        harga:150000,
-        kategori:'Makanan, Nasi, Fast Food',
-        ketersediaan:true
-    },
-    {
-        id_makanan:2,
-        nama:'Bubur Ayam',
-        harga:100000,
-        kategori:'Makanan, Nasi, Bubur',
-        ketersediaan:true
-    },
-    {
-        id_makanan:3,
-        nama:'Nasi Tim Daging Kambing',
-        harga:80000,
-        kategori:'Makanan, Nasi, Daging',
-        ketersediaan:true
-    },
-
-]
-
 const Dashboard = () => {
     // const {token} = {token} //useRecoilValue(authState);
     // const { uuid } = {uuid:"1d3ad08b-4f2b-4b8e-820b-088dabbe65df")//props.match.params
